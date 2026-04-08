@@ -1,0 +1,347 @@
+<testsuites id="" name="" tests="7" failures="0" skipped="0" errors="7" time="6.358543">
+<testsuite name="tests/e2e/auth.spec.ts" timestamp="2026-04-08T09:29:16.919Z" hostname="chromium" tests="7" failures="0" skipped="0" time="8.887" errors="7">
+<testcase name="@P0 @Auth Story-1.1: Authentication Journey › [P0] should display sign-in page for unauthenticated users" classname="tests/e2e/auth.spec.ts" time="1.913">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/tests-e2e-auth--P0-Auth-St-1422c-e-for-unauthenticated-users-chromium/test-failed-1.png]]
+
+[[ATTACHMENT|../test-results/tests-e2e-auth--P0-Auth-St-1422c-e-for-unauthenticated-users-chromium/video.webm]]
+
+[[ATTACHMENT|../test-results/tests-e2e-auth--P0-Auth-St-1422c-e-for-unauthenticated-users-chromium/error-context.md]]
+
+[[ATTACHMENT|../test-results/tests-e2e-auth--P0-Auth-St-1422c-e-for-unauthenticated-users-chromium/trace.zip]]
+]]>
+</system-out>
+<error message="page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/" type="Error">
+<![CDATA[  [chromium] › tests/e2e/auth.spec.ts:44:7 › @P0 @Auth Story-1.1: Authentication Journey › [P0] should display sign-in page for unauthenticated users 
+
+    Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/
+    Call log:
+      - navigating to "http://localhost:3000/", waiting until "load"
+
+
+      43 |
+      44 |   test('[P0] should display sign-in page for unauthenticated users', async ({ page }) => {
+    > 45 |     await page.goto(BASE_URL);
+         |                ^
+      46 |
+      47 |     // Expect login / sign-in element to be visible
+      48 |     const loginButton = page.getByRole('button', { name: /sign in with google/i });
+        at /Users/gryffindor/Desktop/antigra_conversation/bmad-vbl/vlm-testing/tests/e2e/auth.spec.ts:45:16
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/tests-e2e-auth--P0-Auth-St-1422c-e-for-unauthenticated-users-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/tests-e2e-auth--P0-Auth-St-1422c-e-for-unauthenticated-users-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/tests-e2e-auth--P0-Auth-St-1422c-e-for-unauthenticated-users-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/tests-e2e-auth--P0-Auth-St-1422c-e-for-unauthenticated-users-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/tests-e2e-auth--P0-Auth-St-1422c-e-for-unauthenticated-users-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</error>
+</testcase>
+<testcase name="@P0 @Auth Story-1.1: Authentication Journey › [P0] should redirect to dashboard after successful login (via test session injection)" classname="tests/e2e/auth.spec.ts" time="2.081">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/tests-e2e-auth--P0-Auth-St-1db00-via-test-session-injection--chromium/test-failed-1.png]]
+
+[[ATTACHMENT|../test-results/tests-e2e-auth--P0-Auth-St-1db00-via-test-session-injection--chromium/video.webm]]
+
+[[ATTACHMENT|../test-results/tests-e2e-auth--P0-Auth-St-1db00-via-test-session-injection--chromium/error-context.md]]
+
+[[ATTACHMENT|../test-results/tests-e2e-auth--P0-Auth-St-1db00-via-test-session-injection--chromium/trace.zip]]
+]]>
+</system-out>
+<error message="[B1 Blocker] Cannot get test token for role &quot;Admin&quot;. Ensure the backend exposes /api/auth/test-token in NODE_ENV=test." type="Error">
+<![CDATA[  [chromium] › tests/e2e/auth.spec.ts:52:7 › @P0 @Auth Story-1.1: Authentication Journey › [P0] should redirect to dashboard after successful login (via test session injection) 
+
+    Error: [B1 Blocker] Cannot get test token for role "Admin". Ensure the backend exposes /api/auth/test-token in NODE_ENV=test.
+
+       at support/fixtures/index.ts:132
+
+      130 |
+      131 |       if (!res.ok()) {
+    > 132 |         throw new Error(
+          |               ^
+      133 |           `[B1 Blocker] Cannot get test token for role "${role}". ` +
+      134 |           'Ensure the backend exposes /api/auth/test-token in NODE_ENV=test.',
+      135 |         );
+        at Object.getToken (/Users/gryffindor/Desktop/antigra_conversation/bmad-vbl/vlm-testing/support/fixtures/index.ts:132:15)
+        at /Users/gryffindor/Desktop/antigra_conversation/bmad-vbl/vlm-testing/tests/e2e/auth.spec.ts:54:19
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/tests-e2e-auth--P0-Auth-St-1db00-via-test-session-injection--chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/tests-e2e-auth--P0-Auth-St-1db00-via-test-session-injection--chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/tests-e2e-auth--P0-Auth-St-1db00-via-test-session-injection--chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/tests-e2e-auth--P0-Auth-St-1db00-via-test-session-injection--chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/tests-e2e-auth--P0-Auth-St-1db00-via-test-session-injection--chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</error>
+</testcase>
+<testcase name="@P0 @Auth Story-1.1: Authentication Journey › [P0] should persist authenticated session on page reload" classname="tests/e2e/auth.spec.ts" time="2.103">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/tests-e2e-auth--P0-Auth-St-37fee-ated-session-on-page-reload-chromium/test-failed-1.png]]
+
+[[ATTACHMENT|../test-results/tests-e2e-auth--P0-Auth-St-37fee-ated-session-on-page-reload-chromium/video.webm]]
+
+[[ATTACHMENT|../test-results/tests-e2e-auth--P0-Auth-St-37fee-ated-session-on-page-reload-chromium/error-context.md]]
+
+[[ATTACHMENT|../test-results/tests-e2e-auth--P0-Auth-St-37fee-ated-session-on-page-reload-chromium/trace.zip]]
+]]>
+</system-out>
+<error message="[B1 Blocker] Cannot get test token for role &quot;Admin&quot;. Ensure the backend exposes /api/auth/test-token in NODE_ENV=test." type="Error">
+<![CDATA[  [chromium] › tests/e2e/auth.spec.ts:65:7 › @P0 @Auth Story-1.1: Authentication Journey › [P0] should persist authenticated session on page reload 
+
+    Error: [B1 Blocker] Cannot get test token for role "Admin". Ensure the backend exposes /api/auth/test-token in NODE_ENV=test.
+
+       at support/fixtures/index.ts:132
+
+      130 |
+      131 |       if (!res.ok()) {
+    > 132 |         throw new Error(
+          |               ^
+      133 |           `[B1 Blocker] Cannot get test token for role "${role}". ` +
+      134 |           'Ensure the backend exposes /api/auth/test-token in NODE_ENV=test.',
+      135 |         );
+        at Object.getToken (/Users/gryffindor/Desktop/antigra_conversation/bmad-vbl/vlm-testing/support/fixtures/index.ts:132:15)
+        at /Users/gryffindor/Desktop/antigra_conversation/bmad-vbl/vlm-testing/tests/e2e/auth.spec.ts:66:19
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/tests-e2e-auth--P0-Auth-St-37fee-ated-session-on-page-reload-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/tests-e2e-auth--P0-Auth-St-37fee-ated-session-on-page-reload-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/tests-e2e-auth--P0-Auth-St-37fee-ated-session-on-page-reload-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/tests-e2e-auth--P0-Auth-St-37fee-ated-session-on-page-reload-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/tests-e2e-auth--P0-Auth-St-37fee-ated-session-on-page-reload-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</error>
+</testcase>
+<testcase name="@P0 @Auth Story-1.1: Authentication Journey › [P1] should clear session and redirect to login on logout" classname="tests/e2e/auth.spec.ts" time="2.037">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/tests-e2e-auth--P0-Auth-St-4e895-redirect-to-login-on-logout-chromium/test-failed-1.png]]
+
+[[ATTACHMENT|../test-results/tests-e2e-auth--P0-Auth-St-4e895-redirect-to-login-on-logout-chromium/video.webm]]
+
+[[ATTACHMENT|../test-results/tests-e2e-auth--P0-Auth-St-4e895-redirect-to-login-on-logout-chromium/error-context.md]]
+
+[[ATTACHMENT|../test-results/tests-e2e-auth--P0-Auth-St-4e895-redirect-to-login-on-logout-chromium/trace.zip]]
+]]>
+</system-out>
+<error message="[B1 Blocker] Cannot get test token for role &quot;Admin&quot;. Ensure the backend exposes /api/auth/test-token in NODE_ENV=test." type="Error">
+<![CDATA[  [chromium] › tests/e2e/auth.spec.ts:75:7 › @P0 @Auth Story-1.1: Authentication Journey › [P1] should clear session and redirect to login on logout 
+
+    Error: [B1 Blocker] Cannot get test token for role "Admin". Ensure the backend exposes /api/auth/test-token in NODE_ENV=test.
+
+       at support/fixtures/index.ts:132
+
+      130 |
+      131 |       if (!res.ok()) {
+    > 132 |         throw new Error(
+          |               ^
+      133 |           `[B1 Blocker] Cannot get test token for role "${role}". ` +
+      134 |           'Ensure the backend exposes /api/auth/test-token in NODE_ENV=test.',
+      135 |         );
+        at Object.getToken (/Users/gryffindor/Desktop/antigra_conversation/bmad-vbl/vlm-testing/support/fixtures/index.ts:132:15)
+        at /Users/gryffindor/Desktop/antigra_conversation/bmad-vbl/vlm-testing/tests/e2e/auth.spec.ts:76:19
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/tests-e2e-auth--P0-Auth-St-4e895-redirect-to-login-on-logout-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/tests-e2e-auth--P0-Auth-St-4e895-redirect-to-login-on-logout-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/tests-e2e-auth--P0-Auth-St-4e895-redirect-to-login-on-logout-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/tests-e2e-auth--P0-Auth-St-4e895-redirect-to-login-on-logout-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/tests-e2e-auth--P0-Auth-St-4e895-redirect-to-login-on-logout-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</error>
+</testcase>
+<testcase name="@P1 @RBAC Story-1.2: Route Guard Enforcement › [P1] should redirect unauthenticated user away from protected route" classname="tests/e2e/auth.spec.ts" time="0.281">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/tests-e2e-auth--P1-RBAC-St-9cb78-r-away-from-protected-route-chromium/test-failed-1.png]]
+
+[[ATTACHMENT|../test-results/tests-e2e-auth--P1-RBAC-St-9cb78-r-away-from-protected-route-chromium/video.webm]]
+
+[[ATTACHMENT|../test-results/tests-e2e-auth--P1-RBAC-St-9cb78-r-away-from-protected-route-chromium/error-context.md]]
+
+[[ATTACHMENT|../test-results/tests-e2e-auth--P1-RBAC-St-9cb78-r-away-from-protected-route-chromium/trace.zip]]
+]]>
+</system-out>
+<error message="page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/" type="Error">
+<![CDATA[  [chromium] › tests/e2e/auth.spec.ts:105:7 › @P1 @RBAC Story-1.2: Route Guard Enforcement › [P1] should redirect unauthenticated user away from protected route 
+
+    Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/
+    Call log:
+      - navigating to "http://localhost:3000/", waiting until "load"
+
+
+      105 |   test('[P1] should redirect unauthenticated user away from protected route', async ({ page }) => {
+      106 |     // Ensure no session
+    > 107 |     await page.goto(BASE_URL);
+          |                ^
+      108 |     await page.evaluate(() => localStorage.clear());
+      109 |
+      110 |     // Attempt to navigate directly to a protected route
+        at /Users/gryffindor/Desktop/antigra_conversation/bmad-vbl/vlm-testing/tests/e2e/auth.spec.ts:107:16
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/tests-e2e-auth--P1-RBAC-St-9cb78-r-away-from-protected-route-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/tests-e2e-auth--P1-RBAC-St-9cb78-r-away-from-protected-route-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/tests-e2e-auth--P1-RBAC-St-9cb78-r-away-from-protected-route-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/tests-e2e-auth--P1-RBAC-St-9cb78-r-away-from-protected-route-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/tests-e2e-auth--P1-RBAC-St-9cb78-r-away-from-protected-route-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</error>
+</testcase>
+<testcase name="@P1 @RBAC Story-1.2: Route Guard Enforcement › [P1] should redirect Host role user away from Admin-only Master Data page" classname="tests/e2e/auth.spec.ts" time="0.242">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/tests-e2e-auth--P1-RBAC-St-551af-Admin-only-Master-Data-page-chromium/test-failed-1.png]]
+
+[[ATTACHMENT|../test-results/tests-e2e-auth--P1-RBAC-St-551af-Admin-only-Master-Data-page-chromium/video.webm]]
+
+[[ATTACHMENT|../test-results/tests-e2e-auth--P1-RBAC-St-551af-Admin-only-Master-Data-page-chromium/error-context.md]]
+
+[[ATTACHMENT|../test-results/tests-e2e-auth--P1-RBAC-St-551af-Admin-only-Master-Data-page-chromium/trace.zip]]
+]]>
+</system-out>
+<error message="[B1 Blocker] Cannot get test token for role &quot;Host&quot;. Ensure the backend exposes /api/auth/test-token in NODE_ENV=test." type="Error">
+<![CDATA[  [chromium] › tests/e2e/auth.spec.ts:117:7 › @P1 @RBAC Story-1.2: Route Guard Enforcement › [P1] should redirect Host role user away from Admin-only Master Data page 
+
+    Error: [B1 Blocker] Cannot get test token for role "Host". Ensure the backend exposes /api/auth/test-token in NODE_ENV=test.
+
+       at support/fixtures/index.ts:132
+
+      130 |
+      131 |       if (!res.ok()) {
+    > 132 |         throw new Error(
+          |               ^
+      133 |           `[B1 Blocker] Cannot get test token for role "${role}". ` +
+      134 |           'Ensure the backend exposes /api/auth/test-token in NODE_ENV=test.',
+      135 |         );
+        at Object.getToken (/Users/gryffindor/Desktop/antigra_conversation/bmad-vbl/vlm-testing/support/fixtures/index.ts:132:15)
+        at /Users/gryffindor/Desktop/antigra_conversation/bmad-vbl/vlm-testing/tests/e2e/auth.spec.ts:118:19
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/tests-e2e-auth--P1-RBAC-St-551af-Admin-only-Master-Data-page-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/tests-e2e-auth--P1-RBAC-St-551af-Admin-only-Master-Data-page-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/tests-e2e-auth--P1-RBAC-St-551af-Admin-only-Master-Data-page-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/tests-e2e-auth--P1-RBAC-St-551af-Admin-only-Master-Data-page-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/tests-e2e-auth--P1-RBAC-St-551af-Admin-only-Master-Data-page-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</error>
+</testcase>
+<testcase name="@P1 @RBAC Story-1.2: Route Guard Enforcement › [P1] should allow Admin role user to access Master Data page" classname="tests/e2e/auth.spec.ts" time="0.23">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/tests-e2e-auth--P1-RBAC-St-bc408--to-access-Master-Data-page-chromium/test-failed-1.png]]
+
+[[ATTACHMENT|../test-results/tests-e2e-auth--P1-RBAC-St-bc408--to-access-Master-Data-page-chromium/video.webm]]
+
+[[ATTACHMENT|../test-results/tests-e2e-auth--P1-RBAC-St-bc408--to-access-Master-Data-page-chromium/error-context.md]]
+
+[[ATTACHMENT|../test-results/tests-e2e-auth--P1-RBAC-St-bc408--to-access-Master-Data-page-chromium/trace.zip]]
+]]>
+</system-out>
+<error message="[B1 Blocker] Cannot get test token for role &quot;Admin&quot;. Ensure the backend exposes /api/auth/test-token in NODE_ENV=test." type="Error">
+<![CDATA[  [chromium] › tests/e2e/auth.spec.ts:135:7 › @P1 @RBAC Story-1.2: Route Guard Enforcement › [P1] should allow Admin role user to access Master Data page 
+
+    Error: [B1 Blocker] Cannot get test token for role "Admin". Ensure the backend exposes /api/auth/test-token in NODE_ENV=test.
+
+       at support/fixtures/index.ts:132
+
+      130 |
+      131 |       if (!res.ok()) {
+    > 132 |         throw new Error(
+          |               ^
+      133 |           `[B1 Blocker] Cannot get test token for role "${role}". ` +
+      134 |           'Ensure the backend exposes /api/auth/test-token in NODE_ENV=test.',
+      135 |         );
+        at Object.getToken (/Users/gryffindor/Desktop/antigra_conversation/bmad-vbl/vlm-testing/support/fixtures/index.ts:132:15)
+        at /Users/gryffindor/Desktop/antigra_conversation/bmad-vbl/vlm-testing/tests/e2e/auth.spec.ts:136:19
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/tests-e2e-auth--P1-RBAC-St-bc408--to-access-Master-Data-page-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/tests-e2e-auth--P1-RBAC-St-bc408--to-access-Master-Data-page-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/tests-e2e-auth--P1-RBAC-St-bc408--to-access-Master-Data-page-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/tests-e2e-auth--P1-RBAC-St-bc408--to-access-Master-Data-page-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/tests-e2e-auth--P1-RBAC-St-bc408--to-access-Master-Data-page-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</error>
+</testcase>
+</testsuite>
+</testsuites>
