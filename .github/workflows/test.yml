@@ -65,6 +65,10 @@ jobs:
         run: npx playwright install --with-deps chromium
 
       - name: Run tests (shard ${{ matrix.shard }}/4)
+        env:
+          BASE_URL: ${{ secrets.BASE_URL }}
+          API_URL: ${{ secrets.API_URL }}
+          CI: true
         run: npm run test:e2e -- --shard=${{ matrix.shard }}/4
 
       - name: Upload test results
@@ -119,6 +123,10 @@ jobs:
         run: npx playwright install --with-deps chromium
 
       - name: Run burn-in loop (10 iterations)
+        env:
+          BASE_URL: ${{ secrets.BASE_URL }}
+          API_URL: ${{ secrets.API_URL }}
+          CI: true
         run: |
           echo "🔥 Starting burn-in loop - detecting flaky tests"
           for i in {1..10}; do
